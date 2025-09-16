@@ -55,7 +55,7 @@ const B2BSection = () => {
 
             <Button onClick={handleContactTeam} className="btn-racing px-8 py-4 text-xl font-bold flex items-center gap-3 mx-auto">
               <MessageCircle size={24} />
-              Fale com nosso time
+              Fale Conosco
             </Button>
           </div>
         </motion.div>

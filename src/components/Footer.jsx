@@ -65,8 +65,8 @@ const Footer = () => {
               <div className="bg-red-500 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <CreditCard size={24} className="text-white" />
               </div>
-              <span className="text-lg font-semibold text-white">Chave Pix</span>
-              <p className="text-gray-300 mt-2">pix@asprofort.com</p>
+              <span className="text-lg font-semibold text-white">Contato</span>
+              <p className="text-gray-300 mt-2">55 99683-5911</p>
             </motion.div>
           </div>
 
@@ -76,7 +76,7 @@ const Footer = () => {
           {/* Copyright */}
           <div className="text-center">
             <p className="text-gray-400">
-              © 2025 Asprofort. Todos os direitos reservados.
+              © {new Date().getFullYear()} Asprofort. Todos os direitos reservados.
             </p>
           </div>
         </motion.div>
