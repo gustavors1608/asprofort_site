@@ -2,15 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MessageCircle, Wrench, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useToast } from '@/components/ui/use-toast';
 const B2BSection = () => {
-  const {
-    toast
-  } = useToast();
+
   const handleContactTeam = () => {
-    toast({
-      title: "🚧 Esta funcionalidade ainda não foi implementada—mas não se preocupe! Você pode solicitá-la no seu próximo prompt! 🚀"
-    });
+      window.open('https://wa.me/5555996835911', '_blank', 'noopener,noreferrer');
   };
   return <section className="py-20 racing-gradient">
       <div className="container mx-auto px-4">
