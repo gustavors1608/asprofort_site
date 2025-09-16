@@ -1,13 +1,13 @@
 {
-	"name": "web-app",
-	"type": "module",
-	"version": "0.0.0",
-	"private": true,
-	"scripts": {
-		"dev": "vite",
-		"build": "node tools/generate-llms.js || true && vite build",
-		"preview": "vite preview"
-	},
+  "name": "asprofort-site",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173"
+  },	
 	"dependencies": {
 		"@radix-ui/react-alert-dialog": "^1.0.5",
 		"@radix-ui/react-avatar": "^1.0.3",
@@ -47,3 +47,5 @@
     	"eslint-config-react-app": "^7.0.1"
 	}
 }
+
+

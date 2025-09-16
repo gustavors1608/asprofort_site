@@ -13,13 +13,26 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>Asprofort - Performance sob medida para cada motor</title>
-        <meta name="description" content="Velocity stacks e acessórios para carburadores. Especializada em produtos para oficinas, preparadores e equipes de corrida com encaixe perfeito e máximo desempenho." />
-        <meta property="og:title" content="Asprofort - Performance sob medida para cada motor" />
-        <meta property="og:description" content="Velocity stacks e acessórios para carburadores. Se tem corneta, tem performance." />
+        <title>Asprofort - Cornetas e acessórios de alta performance</title>
+        <meta 
+          name="description" 
+          content="Cornetas e acessórios para carburadores desenvolvidos para máxima performance. Soluções sob medida para oficinas, preparadores e equipes de corrida que exigem qualidade e encaixe perfeito." 
+        />
+        <meta 
+          property="og:title" 
+          content="Asprofort - Cornetas e acessórios de alta performance" 
+        />
+        <meta 
+          property="og:description" 
+          content="Cornetas de admissão e acessórios para carburadores. Se tem Asprofort, tem desempenho comprovado em pista e na rua." 
+        />
         <meta property="og:type" content="website" />
-        <meta name="keywords" content="velocity stacks, carburadores, performance, racing, oficinas, preparadores, cornetas" />
+        <meta 
+          name="keywords" 
+          content="cornetas, admissão, carburadores,tbi, performance, motos, corrida, oficinas, preparadores, acessórios de carburador" 
+        />
       </Helmet>
+
       
       <div className="min-h-screen bg-black">
         <Header />
