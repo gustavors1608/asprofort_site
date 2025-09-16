@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --racing-red: #dc2626;
+  --racing-red-dark: #b91c1c;
+  --racing-black: #0a0a0a;
+  --racing-gray: #1a1a1a;
+  --racing-white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--racing-black);
+  color: var(--racing-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.racing-gradient {
+  background: linear-gradient(135deg, var(--racing-black) 0%, var(--racing-gray) 50%, var(--racing-black) 100%);
+}
+
+.racing-red-gradient {
+  background: linear-gradient(135deg, var(--racing-red) 0%, var(--racing-red-dark) 100%);
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(220, 38, 38, 0.2);
+}
+
+.btn-racing {
+  background: linear-gradient(135deg, var(--racing-red) 0%, var(--racing-red-dark) 100%);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-racing:hover {
+  background: transparent;
+  border-color: var(--racing-red);
+  color: var(--racing-red);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(220, 38, 38, 0.3);
+}
+
+.section-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--racing-red) 50%, transparent 100%);
+  margin: 4rem 0;
+}
