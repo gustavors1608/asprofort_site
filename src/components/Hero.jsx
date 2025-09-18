@@ -13,7 +13,7 @@ const Hero = () => {
   return <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img className="w-full h-full object-cover opacity-40" alt="Detalhe de velocity stack em close-up" src="https://images.unsplash.com/photo-1505635374747-431af16edaf2" />
+        <img className="w-full h-full object-cover opacity-40" alt="Detalhe de velocity stack em close-up" src="./src/components/img/hero.jpg" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/80"></div>
       </div>
 
