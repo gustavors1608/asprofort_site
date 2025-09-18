@@ -8,6 +8,7 @@ import B2BSection from '@/components/B2BSection';
 import LinksSection from '@/components/LinksSection';
 import Footer from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
 
       
       <div className="min-h-screen bg-black">
+        <Analytics />
         <Header />
         <main>
           <Hero />
