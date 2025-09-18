@@ -36,7 +36,7 @@ function App() {
 
       
       <div className="min-h-screen bg-black">
-        <Analytics />
+        
         <Header />
         <main>
           <Hero />
@@ -47,6 +47,7 @@ function App() {
         </main>
         <Footer />
         <Toaster />
+        <Analytics />
       </div>
     </>
   );
