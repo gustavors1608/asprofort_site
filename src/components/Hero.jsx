@@ -3,11 +3,12 @@ import { motion } from 'framer-motion';
 import { Download, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from "@/components/img/hero.jpg";
+import pdf_catalogo from "@/components/img/catalogo.pdf";
 
 
 const Hero = () => {
   const handleDownloadCatalog = () => {
-    window.open("@/components/img/catalogo.pdf", '_blank', 'noopener,noreferrer');
+    window.open(pdf_catalogo, '_blank', 'noopener,noreferrer');
   };
   const handleWhatsApp = () => {
     window.open('https://wa.me/5555996835911', '_blank', 'noopener,noreferrer');
