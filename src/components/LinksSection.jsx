@@ -14,7 +14,7 @@ const LinksSection = () => {
         url = 'https://shopee.com/asprofort';
         break;
       case 'Catálogo PDF':
-        url = 'https://ugc.production.linktr.ee/6f8450f4-76a5-451c-a211-09a39cbbf4d4_Cat-logo-cornetas-Asprofort.pdf';
+        url = './catalogo.pdf';
         break;
       case 'WhatsApp':
         url = 'https://wa.me/5555996835911';
