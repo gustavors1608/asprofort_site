@@ -7,7 +7,7 @@ import heroImage from "@/components/img/hero.jpg";
 
 const Hero = () => {
   const handleDownloadCatalog = () => {
-    window.open('./catalogo.pdf', '_blank', 'noopener,noreferrer');
+    window.open("@/components/img/catalogo.pdf", '_blank', 'noopener,noreferrer');
   };
   const handleWhatsApp = () => {
     window.open('https://wa.me/5555996835911', '_blank', 'noopener,noreferrer');
