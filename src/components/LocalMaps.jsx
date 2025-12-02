@@ -88,4 +88,4 @@ const LocationSection = () => {
   );
 };
 
-export default LocationSection;
+export default LocalMaps;
