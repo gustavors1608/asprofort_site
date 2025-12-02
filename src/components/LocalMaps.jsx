@@ -10,7 +10,7 @@ const LocalMaps = () => {
   const handleOpenMaps = () => {
     // URL "normal" do Maps (não embed) para abrir rota
     window.open(
-      "https://www.google.com/maps/place/ASPROFORT+LTDA/@-28.297253,-54.2535078,17z",
+      "https://maps.app.goo.gl/kWbZ9VGcVQMGdBoS6",
       "_blank",
       "noopener,noreferrer"
     );
@@ -43,15 +43,9 @@ const LocalMaps = () => {
                 </h2>
 
                 <p className="text-lg text-gray-300 mb-4">
-                  Produzimos soluções de admissão e performance direto do interior
+                  Produzimos soluções de performance direto do interior
                   do RS, com estrutura preparada para atender oficinas, mecânicos e
                   equipes de corrida em todo o Brasil.
-                </p>
-
-                <p className="text-sm text-gray-400 mb-6">
-                  Confira a localização no mapa e trace sua rota para visitar ou
-                  retirar pedidos diretamente na fábrica (quando combinado com a
-                  equipe).
                 </p>
 
                 <Button
@@ -59,7 +53,7 @@ const LocalMaps = () => {
                   className="btn-racing px-6 py-3 text-base font-bold flex items-center gap-2"
                 >
                   <Navigation size={20} />
-                  Abrir rota no Google Maps
+                  Abrir no Google Maps
                 </Button>
               </div>
 
@@ -79,7 +73,7 @@ const LocalMaps = () => {
 
             <div className="text-xs text-gray-500 text-center md:text-right">
               * Agende sua visita com antecedência. Atendimentos presenciais são
-              focados em oficinas, preparadores e parceiros.
+              focados para retiradas de pedidos de oficinas, preparadores e parceiros.
             </div>
           </div>
         </motion.div>
