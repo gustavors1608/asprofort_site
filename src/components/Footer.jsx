@@ -42,7 +42,7 @@ const Footer = () => {
               className="h-16 w-auto mx-auto mb-6"
             />
             <p className="text-xl text-gray-300">
-              Performance sob medida para cada motor
+              Criado para quem não aceita o comum, apenas o excepcional.
             </p>
           </div>
 
