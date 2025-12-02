@@ -6,6 +6,7 @@ import About from '@/components/About';
 import Catalog from '@/components/Catalog';
 import B2BSection from '@/components/B2BSection';
 import LinksSection from '@/components/LinksSection';
+import LocalMaps from '@/components/LocalMaps';
 import Footer from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { Analytics } from "@vercel/analytics/react"
@@ -44,6 +45,7 @@ function App() {
           <Catalog />
           <B2BSection />
           <LinksSection />
+          <LocalMaps />
         </main>
         <Footer />
         <Toaster />
