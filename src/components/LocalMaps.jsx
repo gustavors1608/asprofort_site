@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { MapPin, Navigation } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const LocationSection = () => {
+const LocalMaps = () => {
   const mapSrc =
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4968.18224882596!2d-54.253507846492326!3d-28.29725303050858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94fe9b4eea4f0393%3A0x545e5334da42d4a3!2sASPROFORT%20LTDA!5e0!3m2!1sen!2sbr!4v1764705328366!5m2!1sen!2sbr";
 
