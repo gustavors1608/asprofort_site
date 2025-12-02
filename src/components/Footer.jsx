@@ -3,6 +3,26 @@ import { motion } from 'framer-motion';
 import { Mail, MapPin, CreditCard } from 'lucide-react';
 
 const Footer = () => {
+  const handleEmail = () => {
+    window.location.href = "mailto:contato@asprofort.com";
+  };
+
+  const handleLocation = () => {
+    window.open(
+      "https://www.google.com/maps/place/ASPROFORT+LTDA/@-28.297253,-54.2535078,17z",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+  const handlePhone = () => {
+    window.open(
+      "https://wa.me/5555996835911",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
   return (
     <footer id="contato" className="bg-black border-t border-red-500/20 py-16">
       <div className="container mx-auto px-4">
@@ -13,6 +33,7 @@ const Footer = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
+
           {/* Logo and Main Info */}
           <div className="text-center mb-12">
             <img 
@@ -27,47 +48,73 @@ const Footer = () => {
 
           {/* Contact Information */}
           <div className="grid md:grid-cols-3 gap-8 mb-12">
+
+            {/* EMAIL */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="text-center"
+              className="text-center cursor-pointer"
             >
-              <div className="bg-red-500 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Mail size={24} className="text-white" />
-              </div>
-              <span className="text-lg font-semibold text-white">E-mail</span>
-              <p className="text-gray-300 mt-2">contato@asprofort.com</p>
+              <button
+                onClick={handleEmail}
+                className="group focus:outline-none"
+              >
+                <div className="bg-red-500 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-red-600 transition">
+                  <Mail size={24} className="text-white" />
+                </div>
+                <span className="text-lg font-semibold text-white">E-mail</span>
+                <p className="text-gray-300 mt-2 group-hover:text-white transition">
+                  contato@asprofort.com
+                </p>
+              </button>
             </motion.div>
 
+            {/* LOCALIZAÇÃO */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-center"
+              className="text-center cursor-pointer"
             >
-              <div className="bg-red-500 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <MapPin size={24} className="text-white" />
-              </div>
-              <span className="text-lg font-semibold text-white">Localização</span>
-              <p className="text-gray-300 mt-2">Santo Ângelo, RS</p>
+              <button
+                onClick={handleLocation}
+                className="group focus:outline-none"
+              >
+                <div className="bg-red-500 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-red-600 transition">
+                  <MapPin size={24} className="text-white" />
+                </div>
+                <span className="text-lg font-semibold text-white">Localização</span>
+                <p className="text-gray-300 mt-2 group-hover:text-white transition">
+                  Santo Ângelo, RS
+                </p>
+              </button>
             </motion.div>
 
+            {/* CONTATO / TELEFONE */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="text-center"
+              className="text-center cursor-pointer"
             >
-              <div className="bg-red-500 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <CreditCard size={24} className="text-white" />
-              </div>
-              <span className="text-lg font-semibold text-white">Contato</span>
-              <p className="text-gray-300 mt-2">55 99683-5911</p>
+              <button
+                onClick={handlePhone}
+                className="group focus:outline-none"
+              >
+                <div className="bg-red-500 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-red-600 transition">
+                  <CreditCard size={24} className="text-white" />
+                </div>
+                <span className="text-lg font-semibold text-white">Contato</span>
+                <p className="text-gray-300 mt-2 group-hover:text-white transition">
+                  55 99683-5911
+                </p>
+              </button>
             </motion.div>
+
           </div>
 
           {/* Divider */}
