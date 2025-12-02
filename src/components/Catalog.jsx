@@ -78,7 +78,7 @@ const Catalog = () => {
               <div className="grid gap-6">
                 <div className="bg-black/50 backdrop-blur-sm p-6 rounded-lg border border-red-500/20 card-hover">
                   <div className="flex items-center gap-4">
-                    <img className="w-20 h-20 object-cover rounded-lg" alt="Velocity stack modelo racing" src="https://images.unsplash.com/photo-1505635374747-431af16edaf2" />
+                    <img className="w-20 h-20 object-cover rounded-lg" alt="Velocity stack modelo racing" src="corneta.png" />
                     <div>
                       <h4 className="text-lg font-bold text-white">Cornetas Linha AFair</h4>
                       <p className="text-gray-300">Para carburadores de Rua e Arrancada</p>
@@ -88,7 +88,7 @@ const Catalog = () => {
 
                 <div className="bg-black/50 backdrop-blur-sm p-6 rounded-lg border border-red-500/20 card-hover">
                   <div className="flex items-center gap-4">
-                    <img className="w-20 h-20 object-cover rounded-lg" alt="Corneta de admissão performance" src="https://images.unsplash.com/photo-1681151373287-7285be831761" />
+                    <img className="w-20 h-20 object-cover rounded-lg" alt="Corneta de admissão performance" src="suporte.png" />
                     <div>
                       <h4 className="text-lg font-bold text-white">Suportes para Wideband</h4>
                       <p className="text-gray-300">Suportes para Motos, Kartcross e muito mais, do Jeito do seu projeto</p>
@@ -98,7 +98,7 @@ const Catalog = () => {
 
                 <div className="bg-black/50 backdrop-blur-sm p-6 rounded-lg border border-red-500/20 card-hover">
                   <div className="flex items-center gap-4">
-                    <img className="w-20 h-20 object-cover rounded-lg" alt="Kit de acessórios para carburador" src="https://images.unsplash.com/photo-1684696244571-b84d6d32c6df" />
+                    <img className="w-20 h-20 object-cover rounded-lg" alt="Kit de acessórios para carburador" src="flange.png" />
                     <div>
                       <h4 className="text-lg font-bold text-white">Flanges para Cuba </h4>
                       <p className="text-gray-300">Cuba do carburador secando quando bota a mão? Conheça nossas Flanges</p>
