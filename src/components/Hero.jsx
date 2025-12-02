@@ -40,9 +40,8 @@ const Hero = () => {
           duration: 0.8,
           delay: 0.2
         }} className="text-4xl md:text-7xl font-black mb-6 mt-6 text-shadow">
-            <span className="text-white">Performance</span>{' '}
-            <span className="text-red-500">sob medida</span>{' '}
-            <span className="text-white">para cada motor.</span>
+            <span className="text-white">Criado para quem não aceita o comum, apenas o</span>{' '}
+            <span className="text-red-500">excepcional</span>{' '}
           </motion.h1>
 
           <motion.p initial={{
@@ -54,7 +53,7 @@ const Hero = () => {
         }} transition={{
           duration: 0.8,
           delay: 0.4
-        }} className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">Cornetas e acessórios para Carburadores e Tbi. Se tem corneta, tem performance!</motion.p>
+        }} className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">Cornetas e acessórios de competição para Carburadores e Tbi.</motion.p>
 
           <motion.div initial={{
           opacity: 0,
