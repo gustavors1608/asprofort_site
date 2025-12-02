@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 
 const Catalog = () => {
   const handleDownloadCatalog = () => {
-    window.open('./catalogo.pdf', '_blank', 'noopener,noreferrer');
+    window.open('/catalogo.pdf', '_blank', 'noopener,noreferrer');
   };
 
   return <section id="catalogo" className="py-20 bg-black">

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Download, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from "@/components/img/hero.jpg";
-import pdf_catalogo from "@/components/img/catalogo.pdf";
+import pdf_catalogo from "@/components/files/catalogo.pdf";
 
 
 const Hero = () => {

@@ -14,7 +14,7 @@ const LinksSection = () => {
         url = 'https://shopee.com/asprofort';
         break;
       case 'Catálogo PDF':
-        url = './catalogo.pdf';
+        url = 'catalogo.pdf';
         break;
       case 'WhatsApp':
         url = 'https://wa.me/5555996835911';

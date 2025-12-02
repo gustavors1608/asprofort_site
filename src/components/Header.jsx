@@ -40,7 +40,7 @@ const Header = () => {
             onClick={() => scrollToSection('inicio')}
           >
             <img 
-              src="https://horizons-cdn.hostinger.com/229498c8-5943-41cd-9068-552bb35f809c/f6c94607f83e7688261da5e78d4a68b7.png"
+              src={'/asprofort_branco_bg.png'}
               alt="Asprofort Logo"
               className="h-5 w-auto"
             />
