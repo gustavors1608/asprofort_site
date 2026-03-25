@@ -110,7 +110,7 @@ const Footer = () => {
                 </div>
                 <span className="text-lg font-semibold text-white">Contato</span>
                 <p className="text-gray-300 mt-2 group-hover:text-white transition">
-                  55 99683-5911
+                  55 99971-3752
                 </p>
               </button>
             </motion.div>
