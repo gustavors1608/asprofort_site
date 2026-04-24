@@ -120,6 +120,19 @@ const Footer = () => {
           {/* Divider */}
           <div className="section-divider"></div>
 
+          {/* Dados Legais */}
+          <div className="text-center mt-6 mb-4 space-y-1">
+            <p className="text-xs text-gray-500">
+              ASPROFORT LTDA — CNPJ: 63.389.432/0001-56
+            </p>
+            <p className="text-xs text-gray-500">
+              Rua General Ernesto Dornelles, 752 / Apt 2 — Bairro Pippi — Santo Ângelo/RS — CEP: 98.805-410
+            </p>
+            <p className="text-xs text-gray-500">
+              SAC: (55) 99683-5911 · E-mail fiscal: asprofort04@gmail.com
+            </p>
+          </div>
+
           {/* Copyright */}
           <div className="text-center">
             <p className="text-gray-400">
