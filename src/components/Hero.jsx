@@ -22,8 +22,10 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           className="w-full h-full object-cover opacity-40"
-          alt="Detalhe de velocity stack em close-up"
+          alt="Detalhe de velocity stack Asprofort em close-up — corneta de admissão de alta performance"
           src={heroImage}
+          fetchpriority="high"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/80"></div>
       </div>

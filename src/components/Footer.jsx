@@ -36,10 +36,13 @@ const Footer = () => {
 
           {/* Logo and Main Info */}
           <div className="text-center mb-12">
-            <img 
-              src={'/asprofort_branco_bg.png'}
-              alt="Asprofort Logo"
+            <img
+              src={'/asprofort_branco_bg.webp'}
+              alt="Asprofort — Cornetas e Acessórios de Alta Performance"
               className="h-16 w-auto mx-auto mb-6"
+              loading="lazy"
+              width="200"
+              height="64"
             />
             <p className="text-xl text-gray-300">
               Criado para quem não aceita o comum, apenas o excepcional.

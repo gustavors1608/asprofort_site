@@ -78,30 +78,63 @@ const Catalog = () => {
               <div className="grid gap-6">
                 <div className="bg-black/50 backdrop-blur-sm p-6 rounded-lg border border-red-500/20 card-hover">
                   <div className="flex items-center gap-4">
-                    <img className="w-20 h-20 object-cover rounded-lg" alt="Velocity stack modelo racing" src="corneta.png" />
+                    <img
+                      className="w-20 h-20 object-cover rounded-lg flex-shrink-0"
+                      alt="Corneta de admissão Asprofort Linha AFair — velocity stack para carburador"
+                      src="corneta.webp"
+                      loading="lazy"
+                      width="80"
+                      height="80"
+                    />
                     <div>
-                      <h4 className="text-lg font-bold text-white">Cornetas Linha AFair</h4>
-                      <p className="text-gray-300">Para carburadores de Rua e Arrancada</p>
+                      <h3 className="text-lg font-bold text-white">Cornetas Linha AFair</h3>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Velocity stacks para carburadores de rua e arrancada. Sistema exclusivo
+                        Asprolock, encaixe milimétrico sem degrau. Disponíveis em curto, médio e longo.
+                        Ganho documentado de até 3cv em motores preparados.
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-black/50 backdrop-blur-sm p-6 rounded-lg border border-red-500/20 card-hover">
                   <div className="flex items-center gap-4">
-                    <img className="w-20 h-20 object-cover rounded-lg" alt="Corneta de admissão performance" src="suporte.png" />
+                    <img
+                      className="w-20 h-20 object-cover rounded-lg flex-shrink-0"
+                      alt="Suporte billet para wideband e instrumentos de performance em guidão de moto"
+                      src="suporte.webp"
+                      loading="lazy"
+                      width="80"
+                      height="80"
+                    />
                     <div>
-                      <h4 className="text-lg font-bold text-white">Suportes para Wideband</h4>
-                      <p className="text-gray-300">Suportes para Motos, Kartcross e muito mais, do Jeito do seu projeto</p>
+                      <h3 className="text-lg font-bold text-white">Suportes para Wideband</h3>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Suportes billet para FT Nano, Hallmeter e Injepro WB Mini. Compatível com
+                        guidões tipo Alto, PCX, Twister e Reto. Para motos, kartcross e qualquer
+                        projeto de performance.
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-black/50 backdrop-blur-sm p-6 rounded-lg border border-red-500/20 card-hover">
                   <div className="flex items-center gap-4">
-                    <img className="w-20 h-20 object-cover rounded-lg" alt="Kit de acessórios para carburador" src="flange.png" />
+                    <img
+                      className="w-20 h-20 object-cover rounded-lg flex-shrink-0"
+                      alt="Flange para cuba de carburador — evita engasgo em alta rotação"
+                      src="flange.webp"
+                      loading="lazy"
+                      width="80"
+                      height="80"
+                    />
                     <div>
-                      <h4 className="text-lg font-bold text-white">Flanges para Cuba </h4>
-                      <p className="text-gray-300">Cuba do carburador secando quando bota a mão? Conheça nossas Flanges</p>
+                      <h3 className="text-lg font-bold text-white">Flanges para Cuba</h3>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Espaçador de 10mm que aumenta a reserva de combustível na cuba e elimina
+                        engasgos em alta rotação. Compatível com Falcon, Twister, Koso, Strada e
+                        CrFlat. Funciona com gasolina, etanol e metanol.
+                      </p>
                     </div>
                   </div>
                 </div>

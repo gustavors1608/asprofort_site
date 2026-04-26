@@ -39,10 +39,12 @@ const Header = () => {
             className="flex items-center cursor-pointer"
             onClick={() => scrollToSection('inicio')}
           >
-            <img 
-              src={'/asprofort_branco_bg.png'}
-              alt="Asprofort Logo"
+            <img
+              src={'/asprofort_branco_bg.webp'}
+              alt="Asprofort — Cornetas e Acessórios de Alta Performance"
               className="h-5 w-auto"
+              width="120"
+              height="20"
             />
           </motion.div>
 
