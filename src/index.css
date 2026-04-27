@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --racing-red: #dc2626;
-  --racing-red-dark: #b91c1c;
+  --racing-red: #E63946;
+  --racing-red-dark: #c1121f;
   --racing-black: #0a0a0a;
   --racing-gray: #1a1a1a;
-  --racing-white: #ffffff;
+  --racing-white: #F5F5F5;
   color-scheme: dark;
 }
 
@@ -19,11 +18,17 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: var(--racing-black);
   color: var(--racing-white);
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+h1, h2, h3, h4,
+.font-black, .font-bold, .font-extrabold {
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.01em;
 }
 
 html {

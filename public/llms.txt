@@ -17,10 +17,10 @@ Cornetas de admissão para carburadores de rua e arrancada. Disponíveis nos com
 Espaçador de 10mm que aumenta o volume de combustível disponível na cuba, evitando engasgos em alta rotação prolongada. Compatível com gasolina, etanol e metanol. Modelos disponíveis para: Falcon, Twister, Koso (todos os modelos), Strada e CrFlat. Acompanha junta, espaçador térmico, mangueira e parafusos inox.
 
 ### Suportes para Wideband (Guidão)
-Suportes billet para instrumentos de performance no guidão: FT Nano (antiga e Pro/Nova), Hallmeter e Injepro WB Mini. Compatível com guidões tipo Alto, PCX, Twister e Reto.
+Suportes para instrumentos de performance no guidão: FT Nano (antiga e Pro/Nova), Hallmeter e Injepro WB Mini. Compatível com guidões tipo Alto, PCX, Twister e Reto.
 
 ### Outros Produtos
-- Respiro de cárter de alta vazão (10mm, nylon com fibra de carbono, suporta 200°C, para a linha Honda)
+- Respiro de cárter de alta vazão (10mm de vazão, nylon com fibra de carbono, suporta 200°C, para a linha Honda)
 - Regulador de marcha lenta para TBI CRF250 e CB300
 - Corneta com bico suplementar integrado (para motores de altíssima performance)
 - Suporte de bico billet (aceita bicos automotivos padrão 61,3mm)
@@ -28,9 +28,8 @@ Suportes billet para instrumentos de performance no guidão: FT Nano (antiga e P
 
 ## Compatibilidades Conhecidas
 - Honda Twister carburada: apenas corneta curta (média e longa batem no amortecedor)
-- Honda CG 160: cornetas AFair com ganho documentado de 1,2cv
-- Carburadores: Koso (todos os modelos), CrFlat, Falcon, Twister, Strada
-- TBIs: CRF250, CB300
+- Honda CG 160: cornetas com ganho documentado de 1,2cv
+- flanges para Carburadores: Koso (todos os modelos), CrFlat, Falcon, Twister, Strada
 
 ## Preços e Condições
 - Faixa: R$ 45 a R$ 220 no varejo

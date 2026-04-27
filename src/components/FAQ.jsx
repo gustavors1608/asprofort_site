@@ -58,7 +58,7 @@ const faqData = [
     items: [
       {
         question: 'Qual o preço das peças?',
-        answer: 'Os preços variam de R$ 45 a R$ 220 no varejo, dependendo do produto e aplicação. Frete grátis em compras acima de R$ 99 (exceto Norte e Nordeste). Consulte a loja Shopee ou entre em contato pelo WhatsApp.',
+        answer: 'Os preços variam de R$ 45 a R$ 220 no varejo, dependendo do produto e aplicação. Frete grátis em compras acima de R$ 99 (exceto Norte e Nordeste). Acesse loja.asprofort.com ou entre em contato pelo WhatsApp.',
       },
       {
         question: 'Vocês enviam para todo o Brasil?',
@@ -75,7 +75,7 @@ const faqData = [
     items: [
       {
         question: 'Como me tornar revendedor Asprofort?',
-        answer: 'Entre em contato pelo WhatsApp do setor comercial: (55) 99683-5911. O programa é voltado para oficinas e lojas com CNPJ. O pedido mínimo inicial para aderir à rede parceira é de R$ 299. Oferecemos margens atrativas, material fotográfico em alta qualidade e plaqueta oficial de revendedor autorizado.',
+        answer: 'Entre em contato pelo WhatsApp do setor comercial: (55) 99683-5911. O programa é voltado para oficinas e lojas com CNPJ. O pedido mínimo inicial para aderir à rede parceira é de R$ 399. Oferecemos margens atrativas, material fotográfico em alta qualidade e plaqueta oficial de revendedor autorizado.',
       },
       {
         question: 'Preciso ter CNPJ para comprar no atacado?',

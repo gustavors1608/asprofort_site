@@ -5,6 +5,7 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Catalog from '@/components/Catalog';
 import B2BSection from '@/components/B2BSection';
+import SocialProof from '@/components/SocialProof';
 import LinksSection from '@/components/LinksSection';
 import LocalMaps from '@/components/LocalMaps';
 import Footer from '@/components/Footer';
@@ -73,7 +74,7 @@ function App() {
             },
             "sameAs": [
               "https://instagram.com/asprofort",
-              "https://shopee.com.br/asprofort"
+              "https://loja.asprofort.com"
             ],
             "foundingLocation": {
               "@type": "Place",
@@ -112,7 +113,7 @@ function App() {
             "openingHours": "Mo-Fr 09:00-18:00",
             "sameAs": [
               "https://instagram.com/asprofort",
-              "https://shopee.com.br/asprofort"
+              "https://loja.asprofort.com"
             ]
           }
         `}</script>
@@ -142,7 +143,7 @@ function App() {
                     "lowPrice": "45",
                     "highPrice": "220",
                     "availability": "https://schema.org/InStock",
-                    "url": "https://shopee.com.br/asprofort"
+                    "url": "https://loja.asprofort.com"
                   }
                 }
               },
@@ -160,7 +161,7 @@ function App() {
                     "@type": "Offer",
                     "priceCurrency": "BRL",
                     "availability": "https://schema.org/InStock",
-                    "url": "https://shopee.com.br/asprofort"
+                    "url": "https://loja.asprofort.com"
                   }
                 }
               },
@@ -178,7 +179,7 @@ function App() {
                     "@type": "Offer",
                     "priceCurrency": "BRL",
                     "availability": "https://schema.org/InStock",
-                    "url": "https://shopee.com.br/asprofort"
+                    "url": "https://loja.asprofort.com"
                   }
                 }
               }
@@ -237,7 +238,7 @@ function App() {
                 "name": "Quanto custa uma corneta Asprofort?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Os preços variam de R$ 45 a R$ 220 no varejo, dependendo do produto e aplicação. Há frete grátis em compras acima de R$ 99 (exceto Norte e Nordeste). Consulte a loja Shopee ou entre em contato pelo WhatsApp."
+                  "text": "Os preços variam de R$ 45 a R$ 220 no varejo, dependendo do produto e aplicação. Há frete grátis em compras acima de R$ 99 (exceto Norte e Nordeste). Acesse loja.asprofort.com ou entre em contato pelo WhatsApp."
                 }
               },
               {
@@ -245,7 +246,7 @@ function App() {
                 "name": "Vocês vendem para revendedores e oficinas?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Sim. Temos programa de revenda para oficinas e lojas com CNPJ. Pedido mínimo de R$ 299 para adesão. Oferecemos margens atrativas, material fotográfico em alta qualidade e suporte dedicado. Contato pelo WhatsApp: (55) 99683-5911."
+                  "text": "Sim. Temos programa de revenda para oficinas e lojas com CNPJ. Pedido mínimo de R$ 399 para adesão. Oferecemos margens atrativas, material fotográfico em alta qualidade e suporte dedicado. Contato pelo WhatsApp: (55) 99683-5911."
                 }
               }
             ]
@@ -261,6 +262,7 @@ function App() {
           <Hero />
           <About />
           <Catalog />
+          <SocialProof />
           <B2BSection />
           <FAQ />
           <LinksSection />

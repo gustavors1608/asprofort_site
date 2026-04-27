@@ -10,8 +10,8 @@ const LinksSection = () => {
       case 'Instagram':
         url = 'https://instagram.com/asprofort';
         break;
-      case 'Shopee':
-        url = 'https://shopee.com/asprofort';
+      case 'Loja Online':
+        url = 'https://loja.asprofort.com';
         break;
       case 'Catálogo PDF':
         url = 'catalogo.pdf';
@@ -33,7 +33,7 @@ const LinksSection = () => {
       color: 'from-purple-500 to-pink-500'
     },
     {
-      name: 'Shopee',
+      name: 'Loja Online',
       icon: ShoppingBag,
       description: 'Nossa loja online',
       color: 'from-orange-500 to-red-500'

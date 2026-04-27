@@ -45,7 +45,7 @@ const Footer = () => {
               height="64"
             />
             <p className="text-xl text-gray-300">
-              Criado para quem não aceita o comum, apenas o excepcional.
+              Componentes para potência repetível e uso severo.
             </p>
           </div>
 

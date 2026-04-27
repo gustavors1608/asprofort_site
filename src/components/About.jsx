@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, Thermometer, MapPin, ShieldCheck } from 'lucide-react';
+import { Target, Wrench, MapPin, ShieldCheck } from 'lucide-react';
 
 const About = () => {
   return (
@@ -14,15 +14,26 @@ const About = () => {
           className="max-w-4xl mx-auto text-center"
         >
           <h2 className="text-4xl md:text-5xl font-black mb-8 text-white">
-            Quem <span className="text-red-500">somos</span>
+            Por que a <span className="text-red-500">Asprofort existe</span>
           </h2>
 
-          <p className="text-xl md:text-2xl text-gray-300 mb-6 leading-relaxed">
-            A Asprofort é uma fabricante brasileira especializada em cornetas de admissão (velocity stacks)
-            e acessórios de alta performance para carburadores e TBI. Desenvolvemos cada peça com foco
-            em encaixe milimétrico e fluxo de ar otimizado — para oficinas, preparadores e equipes de corrida
-            que não aceitam menos que o máximo.
-          </p>
+          {/* Bloco narrativo — problema que existia */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="bg-black/40 border border-red-500/20 rounded-lg p-8 mb-12 text-left max-w-3xl mx-auto"
+          >
+            <p className="text-gray-400 text-lg leading-relaxed">
+              O mercado de preparação estava cheio de peça bonita que não aguentava uso real.
+              Corneta que soltava na vibração. Degrau interno que criava turbulência.
+              Material que não resistia a metanol.{' '}
+              <span className="text-white font-semibold">
+                A Asprofort nasceu pra resolver isso — com fabricação própria e teste em pista.
+              </span>
+            </p>
+          </motion.div>
 
           <p className="text-lg text-gray-400 mb-12 leading-relaxed">
             Fabricação própria em{' '}
@@ -61,14 +72,15 @@ const About = () => {
             >
               <div className="flex items-center justify-center mb-6">
                 <div className="bg-red-500 p-4 rounded-full">
-                  <Thermometer size={32} className="text-white" />
+                  <Wrench size={32} className="text-white" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Material de Corrida</h3>
               <p className="text-gray-300 text-lg">
-                Nylon com fibra de carbono resistente a combustível (gasolina, etanol e metanol)
-                e a temperaturas contínuas de até <strong className="text-white">200°C</strong>.
-                Desenvolvido para suportar as condições mais extremas de uso em pista e arrancada.
+                Nylon com fibra de carbono resistente a combustível —
+                gasolina, etanol e metanol. Não deforma, não resseca,
+                não trinca com o tempo. Desenvolvido pra aguentar uso
+                real em pista e arrancada, não só em bancada.
               </p>
             </motion.div>
 
