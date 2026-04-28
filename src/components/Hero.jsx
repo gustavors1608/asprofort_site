@@ -268,6 +268,7 @@ const SprayCanvas = ({ cornetaRef, zIndex }) => {
     let isPageVisible = !document.hidden;
     let isInViewport = true;
     let rafId = null;
+    let startHandle = null;
 
     const tick = (now) => {
       rafId = requestAnimationFrame(tick);
@@ -303,10 +304,28 @@ const SprayCanvas = ({ cornetaRef, zIndex }) => {
     );
     observer.observe(canvas);
 
-    rafId = requestAnimationFrame(tick);
+    // Adia o início da animação até o browser estar ocioso após o load
+    // Isso garante que o canvas NÃO compete com o FCP/LCP durante o carregamento
+    const startAnimation = () => { rafId = requestAnimationFrame(tick); };
+    const scheduleStart = () => {
+      if ('requestIdleCallback' in window) {
+        startHandle = requestIdleCallback(startAnimation, { timeout: 2000 });
+      } else {
+        startHandle = setTimeout(startAnimation, 300);
+      }
+    };
+    if (document.readyState === 'complete') {
+      scheduleStart();
+    } else {
+      window.addEventListener('load', scheduleStart, { once: true });
+    }
 
     return () => {
-      cancelAnimationFrame(rafId);
+      if (rafId) cancelAnimationFrame(rafId);
+      if (startHandle !== null) {
+        if ('cancelIdleCallback' in window) cancelIdleCallback(startHandle);
+        else clearTimeout(startHandle);
+      }
       ro.disconnect();
       observer.disconnect();
       document.removeEventListener('visibilitychange', handleVisibilityChange);
@@ -317,7 +336,7 @@ const SprayCanvas = ({ cornetaRef, zIndex }) => {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full pointer-events-none"
-      style={{ zIndex, willChange: 'transform' }}
+      style={{ zIndex }}
     />
   );
 };
@@ -360,6 +379,7 @@ const SuctionCanvas = ({ cornetaRef, zIndex }) => {
     let isPageVisible = !document.hidden;
     let isInViewport = true;
     let rafId = null;
+    let startHandle = null;
 
     const tick = (now) => {
       rafId = requestAnimationFrame(tick);
@@ -395,10 +415,27 @@ const SuctionCanvas = ({ cornetaRef, zIndex }) => {
     );
     observer.observe(canvas);
 
-    rafId = requestAnimationFrame(tick);
+    // Adia o início da animação até o browser estar ocioso após o load
+    const startAnimation = () => { rafId = requestAnimationFrame(tick); };
+    const scheduleStart = () => {
+      if ('requestIdleCallback' in window) {
+        startHandle = requestIdleCallback(startAnimation, { timeout: 2000 });
+      } else {
+        startHandle = setTimeout(startAnimation, 300);
+      }
+    };
+    if (document.readyState === 'complete') {
+      scheduleStart();
+    } else {
+      window.addEventListener('load', scheduleStart, { once: true });
+    }
 
     return () => {
-      cancelAnimationFrame(rafId);
+      if (rafId) cancelAnimationFrame(rafId);
+      if (startHandle !== null) {
+        if ('cancelIdleCallback' in window) cancelIdleCallback(startHandle);
+        else clearTimeout(startHandle);
+      }
       ro.disconnect();
       observer.disconnect();
       document.removeEventListener('visibilitychange', handleVisibilityChange);
@@ -409,7 +446,7 @@ const SuctionCanvas = ({ cornetaRef, zIndex }) => {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full pointer-events-none"
-      style={{ zIndex, willChange: 'transform' }}
+      style={{ zIndex }}
     />
   );
 };
@@ -495,13 +532,15 @@ const Hero = () => {
               {/* 1. BACK LAYER — original corneta (z-index 1) */}
               <div style={{ transform: `rotate(${CORNETA_ROTATION_DEG}deg) scale(1.05)`, zIndex: 1 }} className="relative w-full">
                 <picture>
-                  <source srcSet="/corneta_hero.webp" type="image/webp" />
+                  <source srcSet="/corneta_hero.webp" type="image/webp" width="439" height="569" />
                   <img
                     ref={cornetaRef}
                     src="/corneta_hero.png"
                     alt="Corneta de admissão Asprofort — velocity stack com sistema Asprolock"
                     draggable={false}
                     fetchpriority="high"
+                    width="439"
+                    height="569"
                     className="block w-full h-auto"
                     style={{
                       filter: 'drop-shadow(0 4px 32px rgba(230,57,70,0.30)) drop-shadow(0 0 80px rgba(230,57,70,0.12))',
@@ -514,8 +553,8 @@ const Hero = () => {
               <div
                 className="absolute pointer-events-none"
                 style={{
-                  width: '200vw',
-                  height: '200vh',
+                  width: '140vw',
+                  height: '140vh',
                   left: '50%',
                   top: '50%',
                   transform: 'translate(-50%, -50%)',
@@ -536,6 +575,8 @@ const Hero = () => {
                   alt=""
                   aria-hidden="true"
                   draggable={false}
+                  width="439"
+                  height="569"
                   className="w-full h-full object-contain"
 
                 />
