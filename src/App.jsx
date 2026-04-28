@@ -6,14 +6,14 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 
 // Below-the-fold — lazy (reduz JS inicial ~40%)
-const About       = lazy(() => import('@/components/About'));
-const Catalog     = lazy(() => import('@/components/Catalog'));
+const About = lazy(() => import('@/components/About'));
+const Catalog = lazy(() => import('@/components/Catalog'));
 const SocialProof = lazy(() => import('@/components/SocialProof'));
-const B2BSection  = lazy(() => import('@/components/B2BSection'));
-const FAQ         = lazy(() => import('@/components/FAQ'));
-const LinksSection= lazy(() => import('@/components/LinksSection'));
-const LocalMaps   = lazy(() => import('@/components/LocalMaps'));
-const Footer      = lazy(() => import('@/components/Footer'));
+const B2BSection = lazy(() => import('@/components/B2BSection'));
+const FAQ = lazy(() => import('@/components/FAQ'));
+const LinksSection = lazy(() => import('@/components/LinksSection'));
+const LocalMaps = lazy(() => import('@/components/LocalMaps'));
+const Footer = lazy(() => import('@/components/Footer'));
 
 // Toaster é lazy: não bloqueia o carregamento inicial (Radix sai do critical path)
 const Toaster = lazy(() =>
@@ -97,7 +97,7 @@ function App() {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Asprofort",
-            "image": "https://asprofort.com/asprofort_branco_bg.png",
+            "image": "https://asprofort.com/asprofort_branco_bg.webp",
             "url": "https://asprofort.com",
             "telephone": "+55-55-99971-3752",
             "email": "contato@asprofort.com",
@@ -401,7 +401,7 @@ function App() {
         `}</script>
       </Helmet>
 
-      
+
       <div className="min-h-screen bg-black">
         <Header />
         <main>
