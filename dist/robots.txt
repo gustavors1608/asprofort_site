@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://asprofort.com/sitemap.xml
+
+# Arquivos que não precisam ser indexados
+Disallow: /favicon/
