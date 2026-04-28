@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet';
 import { LazyMotion, domAnimation } from 'framer-motion';
+
+// Above-the-fold — carregamento imediato (impactam FCP/LCP)
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Catalog from '@/components/Catalog';
-import B2BSection from '@/components/B2BSection';
-import SocialProof from '@/components/SocialProof';
-import LinksSection from '@/components/LinksSection';
-import LocalMaps from '@/components/LocalMaps';
-import Footer from '@/components/Footer';
-import FAQ from '@/components/FAQ';
+
+// Below-the-fold — lazy (reduz JS inicial ~40%)
+const About       = lazy(() => import('@/components/About'));
+const Catalog     = lazy(() => import('@/components/Catalog'));
+const SocialProof = lazy(() => import('@/components/SocialProof'));
+const B2BSection  = lazy(() => import('@/components/B2BSection'));
+const FAQ         = lazy(() => import('@/components/FAQ'));
+const LinksSection= lazy(() => import('@/components/LinksSection'));
+const LocalMaps   = lazy(() => import('@/components/LocalMaps'));
+const Footer      = lazy(() => import('@/components/Footer'));
+
 import { Toaster } from '@/components/ui/toaster';
 import { Analytics } from "@vercel/analytics/react"
 
@@ -400,15 +405,19 @@ function App() {
           <Header />
           <main>
             <Hero />
-            <About />
-            <Catalog />
-            <SocialProof />
-            <B2BSection />
-            <FAQ />
-            <LinksSection />
-            <LocalMaps />
+            <Suspense fallback={null}>
+              <About />
+              <Catalog />
+              <SocialProof />
+              <B2BSection />
+              <FAQ />
+              <LinksSection />
+              <LocalMaps />
+            </Suspense>
           </main>
-          <Footer />
+          <Suspense fallback={null}>
+            <Footer />
+          </Suspense>
           <Toaster />
           <Analytics />
         </div>

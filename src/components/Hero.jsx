@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useCallback } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { m } from 'framer-motion';
 import { ShoppingBag, MessageCircle, ShieldCheck, Zap, Droplets } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -235,26 +235,29 @@ function computeEmitter(cornetaEl, canvasEl) {
 // ---------------------------------------------------------------------------
 const SprayCanvas = ({ cornetaRef, zIndex }) => {
   const canvasRef = useRef(null);
-  const stateRef = useRef({ particles: [], raf: null });
-
-  const getEmitter = useCallback(() => {
-    return computeEmitter(cornetaRef.current, canvasRef.current);
-  }, [cornetaRef]);
+  const stateRef = useRef({ particles: [] });
+  // Cache da posição do emitter — nunca chamar getBoundingClientRect dentro do tick
+  const emitterRef = useRef({ x: 200, y: 340 });
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     const state = stateRef.current;
 
-    // Reduzir partículas em mobile/dispositivos de baixo desempenho
     const isMobile = window.innerWidth < 768;
     const isLowEnd = (navigator.hardwareConcurrency || 8) <= 4;
     const MAX = (isMobile || isLowEnd) ? 120 : 380;
     const RATE = (isMobile || isLowEnd) ? 4 : 11;
 
+    // Atualiza posição apenas no resize — zero getBCR no hot path
+    const updateEmitter = () => {
+      emitterRef.current = computeEmitter(cornetaRef.current, canvas);
+    };
+
     const resize = () => {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
+      updateEmitter();
     };
     resize();
     const ro = new ResizeObserver(resize);
@@ -268,13 +271,12 @@ const SprayCanvas = ({ cornetaRef, zIndex }) => {
 
     const tick = (now) => {
       rafId = requestAnimationFrame(tick);
-      // Pausar quando aba está oculta ou canvas fora da tela
       if (!isPageVisible || !isInViewport) return;
       if (now - lastTime < FRAME_MS) return;
       lastTime = now;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      const { x: ox, y: oy } = getEmitter();
+      const { x: ox, y: oy } = emitterRef.current; // posição cacheada, sem reflow
 
       for (let i = 0; i < RATE && state.particles.length < MAX; i++) {
         state.particles.push(new SprayParticle(ox, oy));
@@ -292,11 +294,9 @@ const SprayCanvas = ({ cornetaRef, zIndex }) => {
       }
     };
 
-    // Page Visibility API — pausa quando o usuário troca de aba
     const handleVisibilityChange = () => { isPageVisible = !document.hidden; };
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
-    // IntersectionObserver — pausa quando o hero sai do viewport
     const observer = new IntersectionObserver(
       ([entry]) => { isInViewport = entry.isIntersecting; },
       { threshold: 0.1 }
@@ -311,7 +311,7 @@ const SprayCanvas = ({ cornetaRef, zIndex }) => {
       observer.disconnect();
       document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
-  }, [getEmitter]);
+  }, []); // refs são estáveis — sem dependências
 
   return (
     <canvas
@@ -327,26 +327,29 @@ const SprayCanvas = ({ cornetaRef, zIndex }) => {
 // ---------------------------------------------------------------------------
 const SuctionCanvas = ({ cornetaRef, zIndex }) => {
   const canvasRef = useRef(null);
-  const stateRef = useRef({ particles: [], raf: null });
-
-  const getEmitter = useCallback(() => {
-    return computeEmitter(cornetaRef.current, canvasRef.current);
-  }, [cornetaRef]);
+  const stateRef = useRef({ particles: [] });
+  // Cache da posição do emitter — nunca chamar getBoundingClientRect dentro do tick
+  const emitterRef = useRef({ x: 200, y: 340 });
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     const state = stateRef.current;
 
-    // Reduzir partículas em mobile/dispositivos de baixo desempenho
     const isMobile = window.innerWidth < 768;
     const isLowEnd = (navigator.hardwareConcurrency || 8) <= 4;
     const MAX = (isMobile || isLowEnd) ? 80 : 260;
     const RATE = (isMobile || isLowEnd) ? 3 : 7;
 
+    // Atualiza posição apenas no resize — zero getBCR no hot path
+    const updateEmitter = () => {
+      emitterRef.current = computeEmitter(cornetaRef.current, canvas);
+    };
+
     const resize = () => {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
+      updateEmitter();
     };
     resize();
     const ro = new ResizeObserver(resize);
@@ -360,13 +363,12 @@ const SuctionCanvas = ({ cornetaRef, zIndex }) => {
 
     const tick = (now) => {
       rafId = requestAnimationFrame(tick);
-      // Pausar quando aba está oculta ou canvas fora da tela
       if (!isPageVisible || !isInViewport) return;
       if (now - lastTime < FRAME_MS) return;
       lastTime = now;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      const { x: tx, y: ty } = getEmitter();
+      const { x: tx, y: ty } = emitterRef.current; // posição cacheada, sem reflow
 
       for (let i = 0; i < RATE && state.particles.length < MAX; i++) {
         state.particles.push(new SuctionParticle(tx, ty, canvas.width, canvas.height));
@@ -384,11 +386,9 @@ const SuctionCanvas = ({ cornetaRef, zIndex }) => {
       }
     };
 
-    // Page Visibility API — pausa quando o usuário troca de aba
     const handleVisibilityChange = () => { isPageVisible = !document.hidden; };
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
-    // IntersectionObserver — pausa quando o hero sai do viewport
     const observer = new IntersectionObserver(
       ([entry]) => { isInViewport = entry.isIntersecting; },
       { threshold: 0.1 }
@@ -403,7 +403,7 @@ const SuctionCanvas = ({ cornetaRef, zIndex }) => {
       observer.disconnect();
       document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
-  }, [getEmitter]);
+  }, []); // refs são estáveis — sem dependências
 
   return (
     <canvas
