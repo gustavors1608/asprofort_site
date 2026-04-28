@@ -20,7 +20,7 @@ const LocalMaps = () => {
   return (
     <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
-        <m.div
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -93,7 +93,7 @@ const LocalMaps = () => {
               focados para retiradas de pedidos de oficinas, preparadores e parceiros.
             </div>
           </div>
-        </m.div>
+        </motion.div>
       </div>
     </section>
   );

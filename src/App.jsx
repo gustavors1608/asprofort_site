@@ -1,6 +1,5 @@
 import React, { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet';
-import { LazyMotion, domAnimation } from 'framer-motion';
 
 // Above-the-fold — carregamento imediato (impactam FCP/LCP)
 import Header from '@/components/Header';
@@ -16,7 +15,10 @@ const LinksSection= lazy(() => import('@/components/LinksSection'));
 const LocalMaps   = lazy(() => import('@/components/LocalMaps'));
 const Footer      = lazy(() => import('@/components/Footer'));
 
-import { Toaster } from '@/components/ui/toaster';
+// Toaster é lazy: não bloqueia o carregamento inicial (Radix sai do critical path)
+const Toaster = lazy(() =>
+  import('@/components/ui/toaster').then(({ Toaster: T }) => ({ default: T }))
+);
 import { Analytics } from "@vercel/analytics/react"
 
 
@@ -400,28 +402,26 @@ function App() {
       </Helmet>
 
       
-      <LazyMotion features={domAnimation}>
-        <div className="min-h-screen bg-black">
-          <Header />
-          <main>
-            <Hero />
-            <Suspense fallback={null}>
-              <About />
-              <Catalog />
-              <SocialProof />
-              <B2BSection />
-              <FAQ />
-              <LinksSection />
-              <LocalMaps />
-            </Suspense>
-          </main>
+      <div className="min-h-screen bg-black">
+        <Header />
+        <main>
+          <Hero />
           <Suspense fallback={null}>
-            <Footer />
+            <About />
+            <Catalog />
+            <SocialProof />
+            <B2BSection />
+            <FAQ />
+            <LinksSection />
+            <LocalMaps />
           </Suspense>
-          <Toaster />
-          <Analytics />
-        </div>
-      </LazyMotion>
+        </main>
+        <Suspense fallback={null}>
+          <Footer />
+        </Suspense>
+        <Suspense fallback={null}><Toaster /></Suspense>
+        <Analytics />
+      </div>
     </>
   );
 }

@@ -1,7 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { m } from 'framer-motion';
 import { ShoppingBag, MessageCircle, ShieldCheck, Zap, Droplets } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 const LOJA_URL = 'https://loja.asprofort.com';
 
@@ -502,11 +500,9 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center min-h-screen py-24 lg:py-0">
 
           {/* ── LEFT: corneta (2 layers) ──────────────────────────── */}
-          <m.div
+          <div
             className="w-full lg:w-[54%] flex items-center justify-center relative"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: 'easeOut' }}
+            style={{ animation: 'hero-fade-left 1s ease-out forwards' }}
           >
             {/* Soft glow behind the corneta body */}
             <div
@@ -570,52 +566,49 @@ const Hero = () => {
                 className="absolute inset-0 pointer-events-none"
                 style={{ transform: `rotate(${CORNETA_ROTATION_DEG}deg) scale(1.05)`, zIndex: 4 }}
               >
-                <img
-                  src="/corneta_hero_front.png"
-                  alt=""
-                  aria-hidden="true"
-                  draggable={false}
-                  width="439"
-                  height="569"
-                  className="w-full h-full object-contain"
-
-                />
+                <picture>
+                  <source srcSet="/corneta_hero_front.webp" type="image/webp" width="439" height="569" />
+                  <img
+                    src="/corneta_hero_front.png"
+                    alt=""
+                    aria-hidden="true"
+                    draggable={false}
+                    loading="lazy"
+                    width="439"
+                    height="569"
+                    className="w-full h-full object-contain"
+                  />
+                </picture>
               </div>
             </div>
-          </m.div>
+          </div>
 
           {/* ── RIGHT: text ─────────────────────────────────────── */}
           <div className="w-full lg:w-[46%] flex flex-col items-center lg:items-start text-center lg:text-left">
 
-            <m.h1
+            <h1
               className="text-5xl sm:text-6xl lg:text-[4.2rem] xl:text-7xl font-black leading-[1.05] mb-5"
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              style={{ '--slide-from': '40px', animation: 'hero-fade-up 0.8s ease-out 0.2s both' }}
             >
               <span className="text-white block">Calculada pra</span>
               <span className="text-white block">gerar potência.</span>
               <span className="block mt-1" style={{ color: '#E63946' }}>
                 Asprolock. Não<br />solta. Nunca.
               </span>
-            </m.h1>
+            </h1>
 
-            <m.p
+            <p
               className="text-lg text-gray-400 mb-8 max-w-md leading-relaxed"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.35 }}
+              style={{ '--slide-from': '30px', animation: 'hero-fade-up 0.8s ease-out 0.35s both' }}
             >
               Cornetas de admissão com encaixe milimétrico para carburadores e TBI.
               Fixação mecânica com parafusos inox. Sem degrau interno. Feito pra pista.
-            </m.p>
+            </p>
 
             {/* Microdiferenciais */}
-            <m.div
+            <div
               className="flex flex-wrap gap-2 justify-center lg:justify-start mb-9"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+              style={{ '--slide-from': '20px', animation: 'hero-fade-up 0.8s ease-out 0.5s both' }}
             >
               {[
                 { icon: <ShieldCheck size={13} />, label: 'Asprolock System' },
@@ -630,64 +623,52 @@ const Hero = () => {
                   {label}
                 </span>
               ))}
-            </m.div>
+            </div>
 
             {/* CTAs */}
-            <m.div
+            <div
               className="flex flex-col sm:flex-row gap-5 items-center lg:items-start"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.65 }}
+              style={{ '--slide-from': '30px', animation: 'hero-fade-up 0.8s ease-out 0.65s both' }}
             >
-              <Button
+              <button
                 onClick={handleOpenLoja}
-                className="btn-racing px-8 py-4 text-base font-bold flex items-center gap-2.5 min-w-[190px]"
+                className="btn-racing px-8 py-4 text-base font-bold flex items-center gap-2.5 min-w-[190px] rounded-lg"
               >
                 <ShoppingBag size={20} />
                 Comprar na Loja
-              </Button>
+              </button>
 
-              <div className="flex flex-col items-center gap-1">
-                <Button
-                  onClick={handleWhatsApp}
-                  variant="outline"
-                  className="border-2 text-base font-bold flex items-center gap-2.5 min-w-[190px] transition-all duration-300 px-8 py-3.5"
-                  style={{ borderColor: '#E63946', color: '#E63946' }}
-                  onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#E63946'; e.currentTarget.style.color = '#fff'; }}
-                  onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#E63946'; }}
-                >
-                  <MessageCircle size={20} />
-                  Falar no WhatsApp
-                </Button>
-              </div>
-            </m.div>
+              <button
+                onClick={handleWhatsApp}
+                className="border-2 text-base font-bold flex items-center gap-2.5 min-w-[190px] px-8 py-3.5 rounded-lg transition-all duration-300"
+                style={{ borderColor: '#E63946', color: '#E63946', backgroundColor: 'transparent' }}
+                onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#E63946'; e.currentTarget.style.color = '#fff'; }}
+                onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#E63946'; }}
+              >
+                <MessageCircle size={20} />
+                Falar no WhatsApp
+              </button>
+            </div>
           </div>
 
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <m.div
+      {/* Scroll indicator — pure CSS bounce */}
+      <div
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.2 }}
-        style={{ zIndex: 10 }}
+        style={{ zIndex: 10, animation: 'hero-fade-in 1s ease-out 1.2s both' }}
       >
-        <m.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+        <div
           className="w-5 h-9 border-2 rounded-full flex justify-center"
           style={{ borderColor: 'rgba(230,57,70,0.6)' }}
         >
-          <m.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
+          <div
             className="w-1 h-2.5 rounded-full mt-1.5"
-            style={{ backgroundColor: '#E63946' }}
+            style={{ backgroundColor: '#E63946', animation: 'hero-bounce 2s ease-in-out infinite' }}
           />
-        </m.div>
-      </m.div>
+        </div>
+      </div>
     </section>
   );
 };

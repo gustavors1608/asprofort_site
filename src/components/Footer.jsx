@@ -1,5 +1,5 @@
 import React from 'react';
-import { m } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Mail, MapPin, CreditCard } from 'lucide-react';
 
 const Footer = () => {
@@ -26,7 +26,7 @@ const Footer = () => {
   return (
     <footer id="contato" className="bg-black border-t border-red-500/20 py-16">
       <div className="container mx-auto px-4">
-        <m.div
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -53,7 +53,7 @@ const Footer = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
 
             {/* EMAIL */}
-            <m.div
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -72,10 +72,10 @@ const Footer = () => {
                   contato@asprofort.com
                 </p>
               </button>
-            </m.div>
+            </motion.div>
 
             {/* LOCALIZAÇÃO */}
-            <m.div
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -94,10 +94,10 @@ const Footer = () => {
                   Santo Ângelo, RS
                 </p>
               </button>
-            </m.div>
+            </motion.div>
 
             {/* CONTATO / TELEFONE */}
-            <m.div
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -116,7 +116,7 @@ const Footer = () => {
                   55 99971-3752
                 </p>
               </button>
-            </m.div>
+            </motion.div>
 
           </div>
 
@@ -142,7 +142,7 @@ const Footer = () => {
               © {new Date().getFullYear()} Asprofort. Todos os direitos reservados.
             </p>
           </div>
-        </m.div>
+        </motion.div>
       </div>
     </footer>
   );

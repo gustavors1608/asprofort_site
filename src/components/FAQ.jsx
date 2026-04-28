@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { m, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
 const faqData = [
@@ -96,18 +96,18 @@ const FAQItem = ({ question, answer }) => {
         aria-expanded={isOpen}
       >
         <span className="text-white font-semibold pr-4">{question}</span>
-        <m.div
+        <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.2 }}
           className="flex-shrink-0"
         >
           <ChevronDown size={20} className="text-red-500" />
-        </m.div>
+        </motion.div>
       </button>
 
       <AnimatePresence initial={false}>
         {isOpen && (
-          <m.div
+          <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -116,7 +116,7 @@ const FAQItem = ({ question, answer }) => {
             <div className="p-5 pt-0 bg-black/20 border-t border-red-500/10">
               <p className="text-gray-300 leading-relaxed pt-4">{answer}</p>
             </div>
-          </m.div>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>
@@ -127,7 +127,7 @@ const FAQ = () => {
   return (
     <section id="faq" className="py-20 bg-black">
       <div className="container mx-auto px-4">
-        <m.div
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -173,7 +173,7 @@ const FAQ = () => {
               Pergunte no WhatsApp
             </a>
           </div>
-        </m.div>
+        </motion.div>
       </div>
     </section>
   );

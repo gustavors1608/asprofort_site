@@ -1,5 +1,5 @@
 import React from 'react';
-import { m } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Instagram, ShoppingBag, FileText, MessageCircle } from 'lucide-react';
 
 const LinksSection = () => {
@@ -55,7 +55,7 @@ const LinksSection = () => {
   return (
     <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
-        <m.div
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -71,7 +71,7 @@ const LinksSection = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {links.map((link, index) => (
-              <m.div
+              <motion.div
                 key={link.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -87,10 +87,10 @@ const LinksSection = () => {
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">{link.name}</h3>
                 <p className="text-gray-400 text-sm">{link.description}</p>
-              </m.div>
+              </motion.div>
             ))}
           </div>
-        </m.div>
+        </motion.div>
       </div>
     </section>
   );

@@ -23,9 +23,10 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
+          // Apenas React fica fixo no critical path — é sempre necessário
           "vendor-react":  ["react", "react-dom"],
-          "vendor-framer": ["framer-motion"],
-          "vendor-radix":  ["@radix-ui/react-slot", "@radix-ui/react-toast"],
+          // framer-motion e radix são lazy: o Rollup os coloca em chunks dinâmicos
+          // automaticamente quando detecta que só lazy imports os referenciam
           "vendor-icons":  ["lucide-react"],
         },
       },
