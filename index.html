@@ -35,7 +35,7 @@
 		<meta property="og:site_name" content="Asprofort" />
 		<meta property="og:title" content="Asprofort - Cornetas e Acessórios de Alta Performance" />
 		<meta property="og:description" content="Cornetas de admissão e acessórios para carburadores e TBI. Encaixe milimétrico, sistema Asprolock exclusivo. Desempenho comprovado em pista e na rua." />
-		<meta property="og:image" content="https://asprofort.com/asprofort_branco_bg.png" />
+		<meta property="og:image" content="https://asprofort.com/asprofort_branco_bg.webp" />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
 		<meta property="og:image:alt" content="Asprofort - Cornetas e Acessórios de Alta Performance" />
@@ -44,7 +44,7 @@
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content="Asprofort - Cornetas e Acessórios de Alta Performance" />
 		<meta name="twitter:description" content="Cornetas de admissão e acessórios para carburadores e TBI. Encaixe milimétrico, sistema Asprolock exclusivo." />
-		<meta name="twitter:image" content="https://asprofort.com/asprofort_branco_bg.png" />
+		<meta name="twitter:image" content="https://asprofort.com/asprofort_branco_bg.webp" />
 
 		<!-- Canonical -->
 		<link rel="canonical" href="https://asprofort.com" />
@@ -61,6 +61,12 @@
 		<link rel="preconnect" href="https://wa.me" />
 		<link rel="preconnect" href="https://www.google.com" />
 		<link rel="preconnect" href="https://www.googletagmanager.com" />
+
+		<!-- Preload: imagem hero (LCP crítico) — WebP com fallback PNG -->
+		<link rel="preload" as="image" href="/corneta_hero.webp" type="image/webp" fetchpriority="high" />
+
+		<!-- Preload: fonte crítica (evita FOUT no H1 do hero) -->
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&display=swap" as="style" />
 
 		<!-- Google Analytics (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-6JFCP2XY8N"></script>

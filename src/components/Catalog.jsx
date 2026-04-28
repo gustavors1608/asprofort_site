@@ -20,7 +20,7 @@ const produtos = [
     titulo: 'Suportes para Wideband',
     badge: null,
     descricao:
-      'Suportes billet para FT Nano, Hallmeter e Injepro WB Mini. Compatível com guidões tipo Alto, PCX, Twister e Reto. Para motos, kartcross e qualquer projeto de performance.',
+      'Suportes para FT Nano, FT Nano Pro, Hallmeter e Injepro WB Mini. Compatível com guidões tipo Alto, PCX, Twister e Reto. Para motos, kartcross e qualquer projeto de performance.',
   },
   {
     img: 'flange.webp',
@@ -28,7 +28,7 @@ const produtos = [
     titulo: 'Flanges para Cuba',
     badge: null,
     descricao:
-      'Espaçador de 10mm que aumenta a reserva de combustível na cuba e elimina engasgos em alta rotação. Compatível com Falcon, Twister, Koso, Strada e CrFlat. Funciona com gasolina, etanol e metanol.',
+      'Espaçador de 10mm que aumenta a reserva de combustível na cuba e elimina engasgos em alta rotação. Modelos para Falcon, Twister, Koso, Strada, PWK e CrFlat. Funciona com gasolina, etanol e metanol.',
   },
 ];
 

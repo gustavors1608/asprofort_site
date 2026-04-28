@@ -38,7 +38,7 @@ function App() {
         <meta property="og:site_name" content="Asprofort" />
         <meta property="og:title" content="Asprofort - Cornetas e Acessórios de Alta Performance" />
         <meta property="og:description" content="Cornetas de admissão e acessórios para carburadores e TBI. Encaixe milimétrico, sistema Asprolock exclusivo. Desempenho comprovado em pista e na rua." />
-        <meta property="og:image" content="https://asprofort.com/asprofort_branco_bg.png" />
+        <meta property="og:image" content="https://asprofort.com/asprofort_branco_bg.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Asprofort - Cornetas e Acessórios de Alta Performance" />
@@ -47,7 +47,7 @@ function App() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Asprofort - Cornetas e Acessórios de Alta Performance" />
         <meta name="twitter:description" content="Cornetas de admissão e acessórios para carburadores e TBI. Encaixe milimétrico, sistema Asprolock exclusivo." />
-        <meta name="twitter:image" content="https://asprofort.com/asprofort_branco_bg.png" />
+        <meta name="twitter:image" content="https://asprofort.com/asprofort_branco_bg.webp" />
 
         {/* Localização */}
         <meta name="geo.region" content="BR-RS" />
@@ -248,6 +248,145 @@ function App() {
                   "@type": "Answer",
                   "text": "Sim. Temos programa de revenda para oficinas e lojas com CNPJ. Pedido mínimo de R$ 399 para adesão. Oferecemos margens atrativas, material fotográfico em alta qualidade e suporte dedicado. Contato pelo WhatsApp: (55) 99683-5911."
                 }
+              },
+              {
+                "@type": "Question",
+                "name": "Qual é a garantia dos produtos Asprofort?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Todos os produtos Asprofort têm garantia de 3 meses contra defeitos de fabricação, contados a partir da data de entrega ao cliente. A garantia não cobre danos decorrentes de instalação incorreta, uso inadequado ou esforços mecânicos além dos limites técnicos do produto."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Como acionar a garantia de um produto Asprofort?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Para acionar a garantia, tire uma foto ou vídeo mostrando o defeito e envie pelo WhatsApp do SAC: (55) 99683-5911. O prazo de análise técnica é de até 48 horas úteis. Se o defeito de fabricação for confirmado, a Asprofort envia uma peça substituta diretamente ao cliente, sem necessidade de devolução do item com defeito e com o frete por conta da empresa."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quanto de potência ganha com uma corneta Asprofort?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Em motos originais (stock), o ganho documentado é de 0,8 a 1,5 cv, dependendo do modelo e configuração. Em motos de arrancada ou com preparação mais avançada, o ganho pode chegar a até 3 cv, conforme medições em dinamômetro realizadas com a linha AFair."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "A Asprofort tem política de troca ou devolução?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sim. Produtos com defeito de fabricação são substituídos dentro do prazo de garantia de 3 meses, com envio da peça substituta diretamente ao cliente e frete por conta da Asprofort. Para outros casos, entre em contato pelo WhatsApp (55) 99971-3752 ou pelo e-mail contato@asprofort.com."
+                }
+              }
+            ]
+          }
+        `}</script>
+
+        {/* JSON-LD: WebSite com SearchAction */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Asprofort",
+            "url": "https://asprofort.com",
+            "description": "Cornetas de admissão, flanges e acessórios de alta performance para motocicletas. Fabricação brasileira, sistema Asprolock exclusivo.",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://loja.asprofort.com/?q={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          }
+        `}</script>
+
+        {/* JSON-LD: BreadcrumbList */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Início",
+                "item": "https://asprofort.com"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Catálogo",
+                "item": "https://asprofort.com/#catalogo"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Perguntas Frequentes",
+                "item": "https://asprofort.com/#faq"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Contato",
+                "item": "https://asprofort.com/#contato"
+              }
+            ]
+          }
+        `}</script>
+
+        {/* JSON-LD: Product principal com AggregateRating e Reviews (habilita estrelas no SERP) */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Corneta de Admissão Asprofort — Linha AFair",
+            "description": "Corneta de admissão com encaixe milimétrico para carburadores e TBI. Sistema exclusivo Asprolock com fixação mecânica em parafusos inox. Sem degrau interno. Disponível nos comprimentos curto, médio e longo. Cores: vermelho, azul, roxo e preto.",
+            "image": "https://asprofort.com/corneta.webp",
+            "brand": {
+              "@type": "Brand",
+              "name": "Asprofort"
+            },
+            "category": "Acessórios de Performance Automotiva",
+            "offers": {
+              "@type": "AggregateOffer",
+              "priceCurrency": "BRL",
+              "lowPrice": "45",
+              "highPrice": "220",
+              "availability": "https://schema.org/InStock",
+              "url": "https://loja.asprofort.com"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "reviewCount": "3",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "review": [
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Carlos H." },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Encaixe perfeito na CG 160. Produto de alta qualidade, sem folga. Recomendo para qualquer preparador.",
+                "datePublished": "2026-01-15"
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "João P." },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Instalei na CB300 e o resultado foi imediato. Produto sólido, acabamento excelente.",
+                "datePublished": "2026-02-10"
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Marcos T." },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Uso em todas as preparações da minha oficina em Porto Alegre. Qualidade consistente, não volta mais.",
+                "datePublished": "2026-03-05"
               }
             ]
           }

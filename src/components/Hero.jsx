@@ -223,9 +223,10 @@ function computeEmitter(cornetaEl, canvasEl) {
     };
   }
 
+  // Fallback: Centro do canvas (o container das partículas já é centralizado na corneta via CSS)
   return {
-    x: canvasEl.width * 0.25,
-    y: canvasEl.height * 0.42,
+    x: canvasEl.width * 0.5,
+    y: canvasEl.height * 0.5,
   };
 }
 
@@ -244,8 +245,12 @@ const SprayCanvas = ({ cornetaRef, zIndex }) => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     const state = stateRef.current;
-    const MAX = 380;
-    const RATE = 11;
+
+    // Reduzir partículas em mobile/dispositivos de baixo desempenho
+    const isMobile = window.innerWidth < 768;
+    const isLowEnd = (navigator.hardwareConcurrency || 8) <= 4;
+    const MAX = (isMobile || isLowEnd) ? 120 : 380;
+    const RATE = (isMobile || isLowEnd) ? 4 : 11;
 
     const resize = () => {
       canvas.width = canvas.offsetWidth;
@@ -257,9 +262,14 @@ const SprayCanvas = ({ cornetaRef, zIndex }) => {
 
     const FRAME_MS = 1000 / 30;
     let lastTime = 0;
+    let isPageVisible = !document.hidden;
+    let isInViewport = true;
+    let rafId = null;
 
     const tick = (now) => {
-      state.raf = requestAnimationFrame(tick);
+      rafId = requestAnimationFrame(tick);
+      // Pausar quando aba está oculta ou canvas fora da tela
+      if (!isPageVisible || !isInViewport) return;
       if (now - lastTime < FRAME_MS) return;
       lastTime = now;
 
@@ -282,15 +292,32 @@ const SprayCanvas = ({ cornetaRef, zIndex }) => {
       }
     };
 
-    state.raf = requestAnimationFrame(tick);
-    return () => { cancelAnimationFrame(state.raf); ro.disconnect(); };
+    // Page Visibility API — pausa quando o usuário troca de aba
+    const handleVisibilityChange = () => { isPageVisible = !document.hidden; };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    // IntersectionObserver — pausa quando o hero sai do viewport
+    const observer = new IntersectionObserver(
+      ([entry]) => { isInViewport = entry.isIntersecting; },
+      { threshold: 0.1 }
+    );
+    observer.observe(canvas);
+
+    rafId = requestAnimationFrame(tick);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      ro.disconnect();
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
   }, [getEmitter]);
 
   return (
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full pointer-events-none"
-      style={{ zIndex }}
+      style={{ zIndex, willChange: 'transform' }}
     />
   );
 };
@@ -310,8 +337,12 @@ const SuctionCanvas = ({ cornetaRef, zIndex }) => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     const state = stateRef.current;
-    const MAX = 260;
-    const RATE = 7;
+
+    // Reduzir partículas em mobile/dispositivos de baixo desempenho
+    const isMobile = window.innerWidth < 768;
+    const isLowEnd = (navigator.hardwareConcurrency || 8) <= 4;
+    const MAX = (isMobile || isLowEnd) ? 80 : 260;
+    const RATE = (isMobile || isLowEnd) ? 3 : 7;
 
     const resize = () => {
       canvas.width = canvas.offsetWidth;
@@ -323,9 +354,14 @@ const SuctionCanvas = ({ cornetaRef, zIndex }) => {
 
     const FRAME_MS = 1000 / 30;
     let lastTime = 0;
+    let isPageVisible = !document.hidden;
+    let isInViewport = true;
+    let rafId = null;
 
     const tick = (now) => {
-      state.raf = requestAnimationFrame(tick);
+      rafId = requestAnimationFrame(tick);
+      // Pausar quando aba está oculta ou canvas fora da tela
+      if (!isPageVisible || !isInViewport) return;
       if (now - lastTime < FRAME_MS) return;
       lastTime = now;
 
@@ -348,15 +384,32 @@ const SuctionCanvas = ({ cornetaRef, zIndex }) => {
       }
     };
 
-    state.raf = requestAnimationFrame(tick);
-    return () => { cancelAnimationFrame(state.raf); ro.disconnect(); };
+    // Page Visibility API — pausa quando o usuário troca de aba
+    const handleVisibilityChange = () => { isPageVisible = !document.hidden; };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    // IntersectionObserver — pausa quando o hero sai do viewport
+    const observer = new IntersectionObserver(
+      ([entry]) => { isInViewport = entry.isIntersecting; },
+      { threshold: 0.1 }
+    );
+    observer.observe(canvas);
+
+    rafId = requestAnimationFrame(tick);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      ro.disconnect();
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
   }, [getEmitter]);
 
   return (
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full pointer-events-none"
-      style={{ zIndex }}
+      style={{ zIndex, willChange: 'transform' }}
     />
   );
 };
@@ -441,17 +494,20 @@ const Hero = () => {
             >
               {/* 1. BACK LAYER — original corneta (z-index 1) */}
               <div style={{ transform: `rotate(${CORNETA_ROTATION_DEG}deg) scale(1.05)`, zIndex: 1 }} className="relative w-full">
-                <img
-                  ref={cornetaRef}
-                  src="/corneta_hero.png"
-                  alt="Corneta de admissão Asprofort — velocity stack com sistema Asprolock"
-                  draggable={false}
-                  fetchpriority="high"
-                  className="block w-full h-auto"
-                  style={{
-                    filter: 'drop-shadow(0 4px 32px rgba(230,57,70,0.30)) drop-shadow(0 0 80px rgba(230,57,70,0.12))',
-                  }}
-                />
+                <picture>
+                  <source srcSet="/corneta_hero.webp" type="image/webp" />
+                  <img
+                    ref={cornetaRef}
+                    src="/corneta_hero.png"
+                    alt="Corneta de admissão Asprofort — velocity stack com sistema Asprolock"
+                    draggable={false}
+                    fetchpriority="high"
+                    className="block w-full h-auto"
+                    style={{
+                      filter: 'drop-shadow(0 4px 32px rgba(230,57,70,0.30)) drop-shadow(0 0 80px rgba(230,57,70,0.12))',
+                    }}
+                  />
+                </picture>
               </div>
 
               {/* 2. PARTICLE LAYERS (z-index 2 e 3) — Expandidos para não serem cortados pelo wrapper */}

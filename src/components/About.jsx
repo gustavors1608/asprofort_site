@@ -77,7 +77,7 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Material de Corrida</h3>
               <p className="text-gray-300 text-lg">
-                Nylon com fibra de carbono resistente a combustível —
+                Material resistente a combustível —
                 gasolina, etanol e metanol. Não deforma, não resseca,
                 não trinca com o tempo. Desenvolvido pra aguentar uso
                 real em pista e arrancada, não só em bancada.
