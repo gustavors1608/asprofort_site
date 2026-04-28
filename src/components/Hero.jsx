@@ -573,7 +573,7 @@ const Hero = () => {
                     alt=""
                     aria-hidden="true"
                     draggable={false}
-                    loading="lazy"
+                    fetchpriority="high"
                     width="439"
                     height="569"
                     className="w-full h-full object-contain"

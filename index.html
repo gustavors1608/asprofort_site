@@ -55,33 +55,27 @@
 		<!-- Tipografia -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<!-- Carregamento não-bloqueante: baixa como "print", aplica ao carregar -->
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap"
-			media="print"
-			onload="this.media='all'"
-		/>
-		<noscript>
-			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" />
-		</noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" />
 
-		<!-- Performance: preconnect apenas para domínios críticos no carregamento inicial -->
-		<link rel="preconnect" href="https://www.googletagmanager.com" />
-
-		<!-- Preload: imagem hero (LCP crítico) — WebP com fallback PNG -->
+		<!-- Preload: imagens hero (LCP crítico) — WebP com fallback PNG -->
 		<link rel="preload" as="image" href="/corneta_hero.webp" type="image/webp" fetchpriority="high" />
+		<link rel="preload" as="image" href="/corneta_hero_front.webp" type="image/webp" fetchpriority="high" />
 
-		<!-- Preload: fonte crítica (evita FOUT no H1 do hero) -->
-		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&display=swap" as="style" />
-
-		<!-- Google Analytics (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-6JFCP2XY8N"></script>
+		<!-- Google Analytics (gtag.js) com carregamento em idle (não bloqueia LCP) -->
+		<link rel="preconnect" href="https://www.googletagmanager.com" />
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
 			gtag('config', 'G-6JFCP2XY8N');
+			window.addEventListener('load', function() {
+				setTimeout(function() {
+					var script = document.createElement('script');
+					script.src = 'https://www.googletagmanager.com/gtag/js?id=G-6JFCP2XY8N';
+					script.async = true;
+					document.head.appendChild(script);
+				}, 1000);
+			});
 		</script>
 	</head>
 	<body>
