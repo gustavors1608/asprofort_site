@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const Header = () => {
@@ -24,7 +24,7 @@ const Header = () => {
   };
 
   return (
-    <motion.header
+    <m.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -34,7 +34,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <motion.div
+          <m.div
             whileHover={{ scale: 1.05 }}
             className="flex items-center cursor-pointer"
             onClick={() => scrollToSection('inicio')}
@@ -46,7 +46,7 @@ const Header = () => {
               width="120"
               height="20"
             />
-          </motion.div>
+          </m.div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -56,7 +56,7 @@ const Header = () => {
               { name: 'Catálogo', id: 'catalogo' },
               { name: 'Contato', id: 'contato' }
             ].map((item) => (
-              <motion.button
+              <m.button
                 key={item.id}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -64,7 +64,7 @@ const Header = () => {
                 className="text-white hover:text-red-500 font-medium transition-colors duration-300 text-lg"
               >
                 {item.name}
-              </motion.button>
+              </m.button>
             ))}
           </nav>
 
@@ -79,7 +79,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -101,10 +101,10 @@ const Header = () => {
                 </button>
               ))}
             </nav>
-          </motion.div>
+          </m.div>
         )}
       </div>
-    </motion.header>
+    </m.header>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { MessageCircle, Wrench, Package, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -16,7 +16,7 @@ const B2BSection = () => {
     <section className="py-20 racing-gradient">
       <div className="container mx-auto px-4">
         {/* Label de contexto */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -26,9 +26,9 @@ const B2BSection = () => {
           <span className="text-xs text-gray-500 uppercase tracking-widest border border-gray-700 px-4 py-1.5 rounded-full">
             Para oficinas, preparadores e distribuidores
           </span>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -89,7 +89,7 @@ const B2BSection = () => {
               Falar com o Comercial
             </Button>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

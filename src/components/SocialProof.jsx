@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Star } from 'lucide-react';
 
 const depoimentos = [
@@ -36,7 +36,7 @@ const SocialProof = () => {
   return (
     <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -45,7 +45,7 @@ const SocialProof = () => {
         >
           {/* Números de validação */}
           <div className="grid grid-cols-2 gap-8 mb-16 max-w-lg mx-auto text-center">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -53,9 +53,9 @@ const SocialProof = () => {
             >
               <p className="text-5xl md:text-6xl font-black text-red-500">+500</p>
               <p className="text-gray-400 mt-2 text-sm uppercase tracking-wide">cornetas instaladas</p>
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -63,7 +63,7 @@ const SocialProof = () => {
             >
               <p className="text-5xl md:text-6xl font-black text-red-500">+15</p>
               <p className="text-gray-400 mt-2 text-sm uppercase tracking-wide">oficinas parceiras</p>
-            </motion.div>
+            </m.div>
           </div>
 
           {/* Título */}
@@ -76,7 +76,7 @@ const SocialProof = () => {
           {/* Cards de depoimentos */}
           <div className="grid md:grid-cols-3 gap-6">
             {depoimentos.map((d, i) => (
-              <motion.div
+              <m.div
                 key={d.nome}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -92,10 +92,10 @@ const SocialProof = () => {
                   <p className="text-white font-semibold text-sm">{d.nome}</p>
                   <p className="text-gray-500 text-xs mt-0.5">{d.detalhe}</p>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

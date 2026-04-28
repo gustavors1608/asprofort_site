@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useCallback } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { ShoppingBag, MessageCircle, ShieldCheck, Zap, Droplets } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -465,7 +465,7 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center min-h-screen py-24 lg:py-0">
 
           {/* ── LEFT: corneta (2 layers) ──────────────────────────── */}
-          <motion.div
+          <m.div
             className="w-full lg:w-[54%] flex items-center justify-center relative"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -541,12 +541,12 @@ const Hero = () => {
                 />
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* ── RIGHT: text ─────────────────────────────────────── */}
           <div className="w-full lg:w-[46%] flex flex-col items-center lg:items-start text-center lg:text-left">
 
-            <motion.h1
+            <m.h1
               className="text-5xl sm:text-6xl lg:text-[4.2rem] xl:text-7xl font-black leading-[1.05] mb-5"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -557,9 +557,9 @@ const Hero = () => {
               <span className="block mt-1" style={{ color: '#E63946' }}>
                 Asprolock. Não<br />solta. Nunca.
               </span>
-            </motion.h1>
+            </m.h1>
 
-            <motion.p
+            <m.p
               className="text-lg text-gray-400 mb-8 max-w-md leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -567,10 +567,10 @@ const Hero = () => {
             >
               Cornetas de admissão com encaixe milimétrico para carburadores e TBI.
               Fixação mecânica com parafusos inox. Sem degrau interno. Feito pra pista.
-            </motion.p>
+            </m.p>
 
             {/* Microdiferenciais */}
-            <motion.div
+            <m.div
               className="flex flex-wrap gap-2 justify-center lg:justify-start mb-9"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -589,10 +589,10 @@ const Hero = () => {
                   {label}
                 </span>
               ))}
-            </motion.div>
+            </m.div>
 
             {/* CTAs */}
-            <motion.div
+            <m.div
               className="flex flex-col sm:flex-row gap-5 items-center lg:items-start"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -619,34 +619,34 @@ const Hero = () => {
                   Falar no WhatsApp
                 </Button>
               </div>
-            </motion.div>
+            </m.div>
           </div>
 
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
+      <m.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.2 }}
         style={{ zIndex: 10 }}
       >
-        <motion.div
+        <m.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           className="w-5 h-9 border-2 rounded-full flex justify-center"
           style={{ borderColor: 'rgba(230,57,70,0.6)' }}
         >
-          <motion.div
+          <m.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
             className="w-1 h-2.5 rounded-full mt-1.5"
             style={{ backgroundColor: '#E63946' }}
           />
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
     </section>
   );
 };

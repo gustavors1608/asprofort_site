@@ -1,14 +1,15 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { MapPin, Navigation } from "lucide-react";
+import React, { useState } from "react";
+import { m } from "framer-motion";
+import { MapPin, Navigation, Map } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const MAP_EMBED_SRC =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4968.18224882596!2d-54.253507846492326!3d-28.29725303050858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94fe9b4eea4f0393%3A0x545e5334da42d4a3!2sASPROFORT%20LTDA!5e0!3m2!1sen!2sbr!4v1764705328366!5m2!1sen!2sbr";
+
 const LocalMaps = () => {
-  const mapSrc =
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4968.18224882596!2d-54.253507846492326!3d-28.29725303050858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94fe9b4eea4f0393%3A0x545e5334da42d4a3!2sASPROFORT%20LTDA!5e0!3m2!1sen!2sbr!4v1764705328366!5m2!1sen!2sbr";
+  const [showMap, setShowMap] = useState(false);
 
   const handleOpenMaps = () => {
-    // URL "normal" do Maps (não embed) para abrir rota
     window.open(
       "https://maps.app.goo.gl/kWbZ9VGcVQMGdBoS6",
       "_blank",
@@ -19,7 +20,7 @@ const LocalMaps = () => {
   return (
     <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -57,16 +58,32 @@ const LocalMaps = () => {
                 </Button>
               </div>
 
+              {/* Facade: carrega iframe apenas quando o usuário clicar */}
               <div className="w-full md:w-[420px]">
                 <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-red-500/30 shadow-lg shadow-red-500/20">
-                  <iframe
-                    src={mapSrc}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    allowFullScreen
-                    aria-label="Mapa da localização da Asprofort"
-                    className="w-full h-full border-0"
-                  />
+                  {showMap ? (
+                    <iframe
+                      src={MAP_EMBED_SRC}
+                      referrerPolicy="no-referrer-when-downgrade"
+                      allowFullScreen
+                      aria-label="Mapa da localização da Asprofort"
+                      className="w-full h-full border-0"
+                    />
+                  ) : (
+                    <button
+                      onClick={() => setShowMap(true)}
+                      className="w-full h-full flex flex-col items-center justify-center gap-3 bg-zinc-900 hover:bg-zinc-800 transition-colors cursor-pointer"
+                      aria-label="Carregar mapa interativo da Asprofort em Santo Ângelo/RS"
+                    >
+                      <Map size={40} className="text-red-500" />
+                      <span className="text-sm font-medium text-gray-300">
+                        Clique para ver o mapa
+                      </span>
+                      <span className="text-xs text-gray-500">
+                        Santo Ângelo / RS
+                      </span>
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
@@ -76,7 +93,7 @@ const LocalMaps = () => {
               focados para retiradas de pedidos de oficinas, preparadores e parceiros.
             </div>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

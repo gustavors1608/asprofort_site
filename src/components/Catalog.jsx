@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Download, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -44,7 +44,7 @@ const Catalog = () => {
   return (
     <section id="catalogo" className="py-20 bg-black">
       <div className="container mx-auto px-4">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -63,7 +63,7 @@ const Catalog = () => {
           {/* Grid de produtos */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {produtos.map((p, i) => (
-              <motion.div
+              <m.div
                 key={p.titulo}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -100,12 +100,12 @@ const Catalog = () => {
                     Ver na Loja
                   </Button>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
 
           {/* CTA secundário — PDF */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -124,8 +124,8 @@ const Catalog = () => {
               <Download size={15} className="mr-2" />
               Baixar Catálogo PDF
             </Button>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </div>
     </section>
   );

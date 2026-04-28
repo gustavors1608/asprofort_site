@@ -1,12 +1,12 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Target, Wrench, MapPin, ShieldCheck } from 'lucide-react';
 
 const About = () => {
   return (
     <section id="sobre" className="py-20 racing-gradient">
       <div className="container mx-auto px-4">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -18,7 +18,7 @@ const About = () => {
           </h2>
 
           {/* Bloco narrativo — problema que existia */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
@@ -33,7 +33,7 @@ const About = () => {
                 A Asprofort nasceu pra resolver isso — com fabricação própria e teste em pista.
               </span>
             </p>
-          </motion.div>
+          </m.div>
 
           <p className="text-lg text-gray-400 mb-12 leading-relaxed">
             Fabricação própria em{' '}
@@ -43,7 +43,7 @@ const About = () => {
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 mt-8">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -61,9 +61,9 @@ const About = () => {
                 fluxo perfeito. O sistema exclusivo <strong className="text-white">Asprolock</strong> trava
                 a corneta mecanicamente com parafusos inox — não solta na pista.
               </p>
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -82,9 +82,9 @@ const About = () => {
                 não trinca com o tempo. Desenvolvido pra aguentar uso
                 real em pista e arrancada, não só em bancada.
               </p>
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
@@ -101,9 +101,9 @@ const About = () => {
                 Produção 100% própria em Santo Ângelo/RS. Controle de qualidade interno em cada
                 lote. Atendemos varejo e B2B com envio rápido para todo o Brasil.
               </p>
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -121,9 +121,9 @@ const About = () => {
                 em todos os produtos. Suporte técnico direto por WhatsApp para dúvidas de instalação
                 e compatibilidade — antes e depois da compra.
               </p>
-            </motion.div>
+            </m.div>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

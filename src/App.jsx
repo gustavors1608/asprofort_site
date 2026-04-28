@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { LazyMotion, domAnimation } from 'framer-motion';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -394,23 +395,24 @@ function App() {
       </Helmet>
 
       
-      <div className="min-h-screen bg-black">
-        
-        <Header />
-        <main>
-          <Hero />
-          <About />
-          <Catalog />
-          <SocialProof />
-          <B2BSection />
-          <FAQ />
-          <LinksSection />
-          <LocalMaps />
-        </main>
-        <Footer />
-        <Toaster />
-        <Analytics />
-      </div>
+      <LazyMotion features={domAnimation}>
+        <div className="min-h-screen bg-black">
+          <Header />
+          <main>
+            <Hero />
+            <About />
+            <Catalog />
+            <SocialProof />
+            <B2BSection />
+            <FAQ />
+            <LinksSection />
+            <LocalMaps />
+          </main>
+          <Footer />
+          <Toaster />
+          <Analytics />
+        </div>
+      </LazyMotion>
     </>
   );
 }
