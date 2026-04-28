@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { m } from "framer-motion";
+import { motion } from "framer-motion";
 import { MapPin, Navigation, Map } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
