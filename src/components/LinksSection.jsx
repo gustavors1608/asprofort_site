@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Instagram, ShoppingBag, FileText, MessageCircle } from 'lucide-react';
+import { getStoreUrl } from '@/lib/storeUrl';
 
 const LinksSection = () => {
 
@@ -11,7 +12,7 @@ const LinksSection = () => {
         url = 'https://instagram.com/asprofort';
         break;
       case 'Loja Online':
-        url = 'https://loja.asprofort.com';
+        url = getStoreUrl();
         break;
       case 'Catálogo PDF':
         url = 'catalogo.pdf';

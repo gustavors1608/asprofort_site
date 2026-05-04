@@ -2,8 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Download, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-const LOJA_URL = 'https://loja.asprofort.com';
+import { getStoreUrl } from '@/lib/storeUrl';
 
 const produtos = [
   {
@@ -38,7 +37,7 @@ const Catalog = () => {
   };
 
   const handleLoja = () => {
-    window.open(LOJA_URL, '_blank', 'noopener,noreferrer');
+    window.open(getStoreUrl(), '_blank', 'noopener,noreferrer');
   };
 
   return (

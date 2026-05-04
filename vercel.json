@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/loja",
+      "destination": "https://loja.asprofort.com",
+      "permanent": true
+    },
+    {
+      "source": "/loja/:path*",
+      "destination": "https://loja.asprofort.com/:path*",
+      "permanent": true
+    }
+  ]
+}

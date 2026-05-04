@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { ShoppingBag, MessageCircle, ShieldCheck, Zap, Droplets } from 'lucide-react';
-
-const LOJA_URL = 'https://loja.asprofort.com';
+import { getStoreUrl } from '@/lib/storeUrl';
 
 // ---------------------------------------------------------------------------
 // Corneta rotation angle (degrees) — matches reference mockup ~160° CCW
@@ -456,7 +455,7 @@ const Hero = () => {
   const cornetaRef = useRef(null);
 
   const handleOpenLoja = () =>
-    window.open(LOJA_URL, '_blank', 'noopener,noreferrer');
+    window.open(getStoreUrl(), '_blank', 'noopener,noreferrer');
 
   const handleWhatsApp = () =>
     window.open(
