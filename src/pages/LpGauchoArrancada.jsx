@@ -250,9 +250,9 @@ export default function LpGauchoArrancada() {
         ══════════════════════════════════════════════════════════ */}
         <div className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 py-20 max-w-5xl mx-auto">
           {/* Logo + badge */}
-          <div className="flex items-center justify-between mb-16">
-            <img src="/asprofort_branco_bg.webp" alt="Asprofort" className="h-10 object-contain" />
-            <span className="border border-[#E63946] text-white text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-sm">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-12 md:mb-16">
+            <img src="/asprofort_branco_bg.webp" alt="Asprofort" className="h-8 md:h-10 object-contain" />
+            <span className="border border-[#E63946] text-[#E63946] md:text-white text-[10px] md:text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-sm">
               Patrocinador Oficial
             </span>
           </div>

@@ -4,7 +4,7 @@ export const PUBLIC_OPEN = new Date('2026-05-09T12:00:00-03:00').getTime();
 // Alterar para true manualmente quando os 10 cupons forem usados
 export const CUPOM_EXHAUSTED = false;
 
-export const WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/LINK_DO_GRUPO_AQUI';
+export const WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/Ba4CTf3W9sM3Ndm0fhhm3F';
 export const LOJA_URL = 'https://loja.asprofort.com';
 export const CUPOM_CODE = 'CAMPEONATO_GAUCHO';
 
