@@ -2,6 +2,8 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { fileURLToPath, URL } from "node:url";
 
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
+
 export default defineConfig({
   plugins: [react()],
   resolve: {
@@ -21,6 +23,10 @@ export default defineConfig({
     },
     // Chunk splitting: separa vendors do código da aplicação
     rollupOptions: {
+      input: {
+        main: new URL('index.html', import.meta.url).pathname,
+        lp_arr_gaucho: new URL('lp_arr_gaucho.html', import.meta.url).pathname,
+      },
       output: {
         manualChunks: {
           // Apenas React fica fixo no critical path — é sempre necessário
